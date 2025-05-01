@@ -1,1 +1,234 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For Someone Special</title>
+
+  <!-- 🧠 Social Media Preview Meta Tags -->
+  <meta property="og:title" content="For Someone Special 💛">
+  <meta property="og:description" content="A small surprise to make your day a little brighter.">
+  <meta property="og:image" content="https://sid-4215.github.io/rajashree/assets/rajshree.jpg">
+  <meta property="og:url" content="https://sid-4215.github.io/rajashree/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+      height: 100%;
+      overflow-x: hidden;
+      position: relative;
+      z-index: 1;
+      background: linear-gradient(45deg, #ff9a9e, #fad0c4, #fad0c4, #ff9a9e);
+      background-size: 400% 400%;
+      animation: gradientMove 15s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle, .heart, .dot {
+      position: absolute;
+      opacity: 0.7;
+      animation: float 6s linear infinite;
+    }
+
+    .heart {
+      font-size: 2em;
+      color: #ff4081;
+    }
+
+    .dot {
+      border-radius: 50%;
+      animation: float 6s linear infinite;
+    }
+
+    /* Hearts */
+    .heart:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .heart:nth-child(2) { top: 30%; left: 40%; animation-delay: 1s; }
+    .heart:nth-child(3) { top: 50%; left: 60%; animation-delay: 2s; }
+    .heart:nth-child(4) { top: 70%; left: 80%; animation-delay: 3s; }
+    .heart:nth-child(5) { top: 90%; left: 20%; animation-delay: 4s; }
+
+    /* Multi-Color Tiny Bubbles (Dots) */
+    .dot:nth-child(6) { width: 20px; height: 20px; top: 10%; left: 5%; background-color: #ffcc00; animation-delay: 0s; }
+    .dot:nth-child(7) { width: 15px; height: 15px; top: 30%; left: 15%; background-color: #ff5733; animation-delay: 1s; }
+    .dot:nth-child(8) { width: 18px; height: 18px; top: 50%; left: 25%; background-color: #33b5ff; animation-delay: 2s; }
+    .dot:nth-child(9) { width: 12px; height: 12px; top: 70%; left: 45%; background-color: #a633ff; animation-delay: 3s; }
+    .dot:nth-child(10) { width: 16px; height: 16px; top: 40%; left: 60%; background-color: #ff4081; animation-delay: 4s; }
+
+    @keyframes float {
+      0% { transform: translate(0, 0); opacity: 1; }
+      100% { transform: translate(100px, -100px); opacity: 0; }
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 3.5em;
+      color: #ff4081;
+      margin-top: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease forwards;
+    }
+
+    @keyframes fadeIn {
+      100% {
+        opacity: 1;
+      }
+    }
+
+    .photo-frame {
+      width: 240px;
+      height: 240px;
+      margin: 40px auto;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+      border: 4px solid #fff3cd;
+      opacity: 0;
+      animation: fadeIn 2s ease 1s forwards;
+    }
+
+    .photo-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .photo-frame:hover img {
+      transform: scale(1.05);
+    }
+
+    .message, .letter, .quote {
+      background: rgba(255, 255, 255, 0.8);
+      border-radius: 20px;
+      padding: 30px;
+      margin: 30px auto;
+      max-width: 700px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      animation: slideUp 1.5s ease-out forwards;
+    }
+
+    @keyframes slideUp {
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .quote {
+      text-align: center;
+      font-style: italic;
+    }
+
+    a {
+      text-decoration: none;
+      color: #e91e63;
+      font-weight: bold;
+      text-align: center;
+      display: block;
+      margin-top: 20px;
+    }
+
+    footer {
+      margin-top: 40px;
+      font-size: 1.2em;
+      color: #555;
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 2s ease 2s forwards;
+    }
+
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 2.5em;
+      }
+
+      .photo-frame {
+        width: 180px;
+        height: 180px;
+      }
+
+      .message, .letter, .quote {
+        padding: 20px;
+      }
+
+      footer {
+        font-size: 1em;
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="background"></div>
+
+  <div class="particles">
+    <div class="heart">💖💗</div>
+    <div class="heart">💛</div>
+    <div class="heart">💞</div>
+    <div class="heart">💗</div>
+    <div class="heart">💕</div>
+
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+
+  <h1>Hey Special One 🌼</h1>
+
+  <div class="photo-frame">
+    <img src="assets/rajshree.jpg" alt="Kind Smile">
+  </div>
+
+  <div class="message">
+    <p>I know today might feel a bit “meh”... not bad, not great. And that’s totally okay.</p>
+    <p>I just wanted to remind you—someone out there really appreciates your existence, your smile, and your vibe. ☀️</p>
+  </div>
+
+  <div class="letter">
+    <h2>A Little Note from Me 🙂</h2>
+    <p>You're not just another person in the crowd. You're someone I genuinely admire—your calmness, your kindness, even your silences feel meaningful.</p>
+    <p>I don’t know where this connection will lead, but I know I’m happy whenever I get a chance to talk to you. You make the world a little better without even trying.</p>
+  </div>
+
+  <div class="quote">
+    <h3>🌷 Quote That Reminds Me of You</h3>
+    <p><em>"Some people make you feel better just by being around—and you’re definitely one of them."</em></p>
+  </div>
+
+  <footer>Just a small thing to make your day a bit brighter. You're appreciated.</footer>
+
+</body>
+</html>💖💗
